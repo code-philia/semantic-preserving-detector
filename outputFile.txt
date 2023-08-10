@@ -1,0 +1,31 @@
+Method: parseObject(Map, Object)
+Commit Version: 
+              } else {
+                  throw new JSONException("illegal ref, " + JSONToken.name(lexer.token()));
+              }
+          }
+          if (!setContextFlag) {
++             ParseContext contextR = setContext(object, fieldName);
++             if (context == null) {
++                 context = contextR;
++             }
+              setContextFlag = true;
+          }
+          if (object.getClass() == JSONObject.class) {
+              key = (key == null) ? "null" : key.toString();
+          }
+
+Parent Version: 
+              } else {
+                  throw new JSONException("illegal ref, " + JSONToken.name(lexer.token()));
+              }
+          }
+          if (!setContextFlag) {
+-             setContext(object, fieldName);
+              setContextFlag = true;
+          }
+          if (object.getClass() == JSONObject.class) {
+              key = (key == null) ? "null" : key.toString();
+          }
+
+---------------- METHOD BREAK ---------------
